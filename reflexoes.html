@@ -1,107 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reflexões | Psicologia • TCC – Regina Carrillo</title>
-  <meta name="description" content="Reflexões, textos e conteúdos sobre autoconhecimento, ansiedade, depressão e qualidade de vida com base na Terapia Cognitivo-Comportamental." />
-  <meta name="theme-color" content="#A8E2BE" />
-  <link rel="icon" href="favicon.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Reflexões | Psicologia • TCC | Regina Carrillo</title>
+  <meta name="description" content="Reflexões sobre autoconhecimento, ansiedade, depressão e qualidade de vida — por Regina Carrillo (TCC)." />
+  <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3b3b8b1c3f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Estilo específico da página de Reflexões -->
   <style>
-    :root{
-      --verde:#A8E2BE; --verde-esc:#2D5948; --bg:#E8F8EE; --texto:#1a4a39;
+    /* Hero exclusivo da página de Reflexões (usa o outro banner) */
+    body.reflexoes .hero{
+      background:#CDEFD9 url('hero_01.png') center right / cover no-repeat;
+      min-height:56vh;
+      padding-top:calc(90px + env(safe-area-inset-top));
+      padding-bottom:120px;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Montserrat,sans-serif;background:var(--bg);color:#333;line-height:1.7}
-    .container{width:90%;max-width:1000px;margin:0 auto}
-    header{position:sticky;top:0;z-index:10;background:var(--verde);box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{font-weight:700;color:var(--verde-esc);display:flex;gap:.5rem;align-items:center}
-    .logo a{color:var(--verde-esc);text-decoration:none}
-    .actions a{background:var(--verde-esc);color:#fff;padding:.55rem 1.1rem;border-radius:999px;text-decoration:none;font-weight:700}
-    .hero{background:#CDEFD9 url('hero_01.png') center/cover no-repeat;padding:60px 0 80px}
-    .hero h1{font-family:"Source Serif 4",serif;color:var(--texto);text-align:center;font-size:clamp(1.8rem,3vw,2.2rem)}
-    .hero p{max-width:720px;margin:10px auto 0;text-align:center;color:#355e4a}
-    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin:26px 0 60px}
-    article{background:#fff;border-radius:16px;padding:22px;border:1px solid rgba(45,89,72,.12);box-shadow:0 6px 16px rgba(0,0,0,.05)}
-    article h2{font-family:"Source Serif 4",serif;color:var(--verde-esc);margin-bottom:6px;font-size:1.4rem}
-    .meta{font-size:.9rem;color:#6a7f78;margin-bottom:10px}
-    .tags{margin-top:6px;font-size:.85rem}
-    .tag{display:inline-block;background:#d9f3e6;color:#0f3f31;padding:.2rem .6rem;border-radius:999px;margin-right:.35rem}
-    .post{color:#2b3e36;text-decoration:none}
-    footer{background:var(--verde);color:var(--verde-esc);text-align:center;padding:16px 0;font-size:.95rem}
-    .util{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:10px}
-    .util a{display:inline-flex;align-items:center;gap:.45rem;background:#25D366;color:#fff;text-decoration:none;padding:.5rem .9rem;border-radius:999px;font-weight:700}
-    .util a.ig{background:#E4405F}
-    @media(min-width:820px){ .grid{grid-template-columns:1fr 1fr} }
+    /* Grade de posts */
+    .blog{
+      background:#E8F8EE;
+      padding:48px 0 64px;
+    }
+    .blog h2{
+      text-align:center;color:#1a4a39;
+      font-family:"Source Serif 4",serif;margin-bottom:18px
+    }
+    .grid{
+      display:grid;gap:18px;margin-top:12px
+    }
+    @media(min-width:840px){ .grid{ grid-template-columns:1fr 1fr } }
+    article.post{
+      background:#fff;border-radius:16px;padding:22px 22px;
+      border:1px solid rgba(45,89,72,.12);
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    article.post:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(0,0,0,.08);
+    }
+    article.post h3{
+      font-family:"Source Serif 4",serif;color:#2D5948;margin-bottom:6px;font-size:1.35rem
+    }
+    .meta{font-size:.9rem;color:#6b7f78;margin-bottom:10px}
+    .tags{margin-top:10px}
+    .tag{display:inline-block;background:#d9f3e6;color:#0f3f31;padding:.22rem .6rem;border-radius:999px;margin-right:.35rem;font-size:.85rem}
+    /* Garante que qualquer frase introdutória antiga não apareça */
+    .hero .intro, #reflexoes-intro{ display:none !important; }
   </style>
 </head>
-<body>
+<body class="reflexoes">
 
-<header>
-  <div class="container nav">
-    <div class="logo">
-      <a href="index.html">🌻 Psicologia • TCC</a>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="container nav">
+      <div class="logo">🌻 Psicologia • TCC</div>
+      <nav class="nav-actions">
+        <a href="index.html" class="btn">Início</a>
+        <a href="#posts" class="btn">Posts</a>
+        <a href="https://wa.me/5511932890847?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener" class="btn">Agendar</a>
+      </nav>
     </div>
-    <div class="actions">
-      <a href="https://wa.me/5511932890847?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar</a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<main>
+  <!-- Hero limpo (sem frase extra) -->
   <section class="hero">
-    <div class="container">
-      <h1>Reflexões</h1>
-      <p>Textos curtos para cultivar autoconhecimento, reduzir a ansiedade e viver com mais propósito.</p>
+    <div class="overlay">
+      <div class="container hero-content">
+        <h1>Reflexões</h1>
+        <!-- nada de parágrafo aqui -->
+      </div>
     </div>
   </section>
 
-  <section>
+  <!-- Lista de posts -->
+  <main id="posts" class="blog">
     <div class="container">
-      <div class="grid">
+      <h2>Textos recentes</h2>
 
-        <!-- POST 1 -->
-        <article>
-          <h2>O poder do autoconhecimento</h2>
-          <div class="meta">Publicado em 22/10/2025 • 3 min</div>
-          <p>Reconhecer pensamentos e emoções é o primeiro passo para transformá-los. Na TCC, aprendemos a observar crenças, testar hipóteses e construir novos caminhos de ação — com gentileza e método.</p>
+      <div class="grid">
+        <article class="post">
+          <h3>O poder do autoconhecimento</h3>
+          <div class="meta">22/10/2025 • 3 min</div>
+          <p>Reconhecer pensamentos e emoções é o primeiro passo para transformá-los. Na TCC, observamos crenças, testamos hipóteses e construímos caminhos práticos, com gentileza e método.</p>
           <div class="tags"><span class="tag">TCC</span><span class="tag">Autoconhecimento</span></div>
         </article>
 
-        <!-- POST 2 -->
-        <article>
-          <h2>Ansiedade e o tempo presente</h2>
-          <div class="meta">Publicado em 22/10/2025 • 2 min</div>
-          <p>Boa parte da ansiedade nasce da tentativa de controlar o futuro. Trabalhar ancoragem no presente, respiração e reestruturação cognitiva ajuda a reduzir a ruminação e ampliar escolhas.</p>
+        <article class="post">
+          <h3>Ansiedade e o tempo presente</h3>
+          <div class="meta">22/10/2025 • 2 min</div>
+          <p>A ansiedade costuma nascer do excesso de futuro. Técnicas de ancoragem no presente, respiração e reestruturação cognitiva ajudam a reduzir a ruminação e ampliar escolhas.</p>
           <div class="tags"><span class="tag">Ansiedade</span><span class="tag">Mindfulness</span></div>
         </article>
 
-        <!-- POST 3 -->
-        <article>
-          <h2>Microvitórias e motivação</h2>
-          <div class="meta">Publicado em 22/10/2025 • 2 min</div>
-          <p>Progresso consistente nasce de passos pequenos e frequentes. Definir tarefas possíveis e mensuráveis cria senso de autoeficácia — um dos motores da mudança comportamental.</p>
+        <article class="post">
+          <h3>Microvitórias e motivação</h3>
+          <div class="meta">22/10/2025 • 2 min</div>
+          <p>Progresso consistente vem de passos pequenos e frequentes. Tarefas claras e possíveis aumentam o senso de autoeficácia — um dos motores da mudança comportamental.</p>
           <div class="tags"><span class="tag">Hábitos</span><span class="tag">Motivação</span></div>
         </article>
 
+        <article class="post">
+          <h3>Autocompaixão não é acomodação</h3>
+          <div class="meta">22/10/2025 • 3 min</div>
+          <p>Ser gentil consigo não significa deixar de agir. Ao contrário: reduz a autocrítica paralisante e abre espaço para escolhas maduras e sustentáveis.</p>
+          <div class="tags"><span class="tag">Autocuidado</span><span class="tag">Emoções</span></div>
+        </article>
       </div>
 
-      <div class="util">
-        <a href="https://wa.me/5511932890847?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Agendar sessão</a>
-        <a class="ig" href="https://www.instagram.com/psicoreginacarrillo" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Seguir no Instagram</a>
+      <div class="buttons" style="margin-top:18px">
+        <a href="https://wa.me/5511932890847?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener" class="btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> Agendar sessão
+        </a>
+        <a href="https://www.instagram.com/psicoreginacarrillo" target="_blank" rel="noopener" class="btn-instagram">
+          <i class="fab fa-instagram"></i> Seguir no Instagram
+        </a>
       </div>
     </div>
-  </section>
-</main>
+  </main>
 
-<footer>
-  © 2025 Psicologia • TCC — CRP SP 06/147736
-</footer>
+  <!-- Rodapé -->
+  <footer>
+    <div class="container small">
+      © 2025 Psicologia • TCC — CRP SP 06/147736 — Atendimento baseado em evidências, com acolhimento.
+    </div>
+  </footer>
 
 </body>
 </html>
