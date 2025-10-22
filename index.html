@@ -1,69 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Psicologia • TCC | Regina Carrillo</title>
-  <meta name="description" content="Psicóloga cognitivo-comportamental. Atendimento on-line para depressão, ansiedade, pânico e transtornos mentais. Especialização em Neuropsicologia." />
-  <meta name="theme-color" content="#A8E2BE" />
-  <link rel="icon" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/3b3b8b1c3f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psicologia • TCC | Atendimento on-line</title>
+  <meta name="description" content="Psicóloga cognitivo-comportamental. Atendimento on-line para depressão, ansiedade, pânico e transtornos mentais.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Serif+4:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-  <!-- Cabeçalho -->
-  <header>
-    <div class="container nav">
-      <div class="logo">🌻 Psicologia • TCC</div>
-      <nav class="nav-actions">
-        <a href="index.html" class="btn">Início</a>
-        <a href="reflexoes.html" class="btn">Reflexões</a>
-        <a href="#contato" class="btn">Agendar</a>
-      </nav>
-    </div>
+<body>
+  <header class="nav-container">
+    <div class="logo">🌻 Psicologia • TCC</div>
+    <nav>
+      <a href="#inicio" class="btn-nav">Início</a>
+      <a href="#reflexoes" class="btn-nav">Reflexões</a>
+      <a href="#contato" class="btn-agendar">Agendar</a>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="overlay">
-      <div class="container hero-content">
-        <h4>Psicóloga Cognitivo-Comportamental</h4>
-        <h1>Equilíbrio emocional começa com autoconhecimento</h1>
-        <p class="sublead">
-          Atendimento on-line • Depressão, ansiedade, pânico e transtornos mentais
-        </p>
-        <div class="buttons">
-          <a href="https://wa.me/5511932890847?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener" class="btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-          <a href="https://www.instagram.com/psicoreginacarrillo" target="_blank" rel="noopener" class="btn-instagram">
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
-        </div>
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h4>PSICÓLOGA COGNITIVO-COMPORTAMENTAL</h4>
+      <h1>Equilíbrio emocional começa com autoconhecimento</h1>
+      <p>Atendimento on-line • Depressão, ansiedade, pânico e transtornos mentais</p>
+      <div class="buttons">
+        <a href="https://wa.me/5511932890847" class="btn-whatsapp" target="_blank">💬 WhatsApp</a>
+        <a href="https://www.instagram.com/psicoreginacarrillo" class="btn-instagram" target="_blank">📷 Instagram</a>
       </div>
     </div>
   </section>
 
-  <!-- Contato -->
-  <section id="contato" class="contato">
-    <div class="container">
-      <h2>Contato</h2>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5511932890847" target="_blank">(11) 93289-0847</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/psicoreginacarrillo" target="_blank">@psicoreginacarrillo</a></p>
-      <p><strong>E-mail:</strong> reca20004@yahoo.com.br</p>
+  <section class="reflexoes" id="reflexoes">
+    <h2>Textos recentes</h2>
+    <div class="posts">
+      <article>
+        <h3>O poder do autoconhecimento</h3>
+        <p>Descubra como pequenas reflexões diárias podem transformar sua forma de lidar com emoções e desafios.</p>
+      </article>
+      <article>
+        <h3>Ansiedade e o tempo presente</h3>
+        <p>Como a terapia cognitivo-comportamental pode ajudar a reconectar-se com o agora.</p>
+      </article>
+      <article>
+        <h3>Autocuidado emocional</h3>
+        <p>Dicas práticas para manter o equilíbrio entre corpo, mente e emoções no dia a dia.</p>
+      </article>
     </div>
   </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="container small">
-      © 2025 Psicologia • TCC — CRP SP 06/147736 — Atendimento baseado em evidências, com acolhimento.
-    </div>
-  </footer>
+  <section class="contato" id="contato">
+    <h2>Contato</h2>
+    <p><strong>WhatsApp:</strong> (11) 93289-0847</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/psicoreginacarrillo" target="_blank">@psicoreginacarrillo</a></p>
+    <p><strong>E-mail:</strong> reca20004@yahoo.com.br</p>
+  </section>
 
+  <footer>
+    <p>© 2025 Psicologia • TCC — CRP SP 06/147736</p>
+  </footer>
 </body>
 </html>
