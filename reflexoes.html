@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Reflexões | Psicologia • TCC | Regina Carrillo</title>
+  <title>Reflexões | Psicóloga • TCC | Regina Carrillo</title>
   <meta name="description" content="Reflexões sobre autoconhecimento, ansiedade, depressão e qualidade de vida — por Regina Carrillo (TCC)." />
   <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,19 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3b3b8b1c3f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Ajustes específicos da página Reflexões -->
   <style>
+    /* Hero limpo para Reflexões, sem título sobreposto */
     body.reflexoes .hero{
       background:#CDEFD9 url('hero_01.png') 60% center / cover no-repeat;
-      min-height:70vh;
-      padding-top:calc(96px + env(safe-area-inset-top));
-      padding-bottom:180px;
-      display:flex;align-items:flex-start;justify-content:center;
+      min-height:70vh; padding-top:calc(96px + env(safe-area-inset-top)); padding-bottom:180px;
+      display:flex; align-items:flex-start; justify-content:center;
     }
-    /* Esconde completamente o bloco do título no hero */
     body.reflexoes .hero .hero-content{ display:none !important; }
-
     .blog{ background:#E8F8EE; padding:48px 0 64px; }
     .blog h2{ text-align:center; color:#1a4a39; font-family:"Source Serif 4",serif; margin-bottom:18px; }
     .grid{ display:grid; gap:18px; margin-top:12px; }
@@ -32,14 +27,13 @@
       background:#fff; border-radius:16px; padding:22px 22px;
       border:1px solid rgba(45,89,72,.12);
       box-shadow:0 6px 16px rgba(0,0,0,.06);
-      transition:transform .2s ease, box-shadow .2s ease;
+      transition:transform .2s, box-shadow .2s;
     }
     article.post:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,.08); }
     article.post h3{ font-family:"Source Serif 4",serif; color:#2D5948; margin-bottom:6px; font-size:1.35rem; }
     .meta{ font-size:.9rem; color:#6b7f78; margin-bottom:10px; }
     .tags{ margin-top:10px; }
     .tag{ display:inline-block; background:#d9f3e6; color:#0f3f31; padding:.22rem .6rem; border-radius:999px; margin-right:.35rem; font-size:.85rem; }
-
     @media (max-width:600px){
       body.reflexoes .hero{ background-position:center; min-height:72vh; padding-bottom:160px; }
     }
@@ -50,7 +44,7 @@
   <!-- Cabeçalho -->
   <header>
     <div class="container nav">
-      <div class="logo">🌻 Psicologia • TCC</div>
+      <div class="logo">🌻 Psicóloga • TCC</div>
       <nav class="nav-actions">
         <a href="index.html" class="btn">Início</a>
         <a href="#posts" class="btn">Reflexões</a>
@@ -60,9 +54,7 @@
   </header>
 
   <!-- Hero sem título -->
-  <section class="hero">
-    <div class="overlay"><!-- hero limpo --></div>
-  </section>
+  <section class="hero"><div class="overlay"></div></section>
 
   <!-- Lista de posts -->
   <main id="posts" class="blog">
@@ -113,10 +105,9 @@
   <!-- Rodapé -->
   <footer>
     <div class="container small">
-      © 2025 Psicologia • TCC — CRP SP 06/147736 — Atendimento baseado em evidências, com acolhimento.
+      © 2025 Psicóloga • TCC — CRP SP 06/147736 — Atendimento baseado em evidências, com acolhimento.
     </div>
   </footer>
 
 </body>
 </html>
-
