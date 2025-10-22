@@ -1,115 +1,129 @@
-:root {
-  --verde: #A8E2BE;
-  --verde-escuro: #2D5948;
-  --branco: #ffffff;
-  --texto: #1a4a39;
+:root{
+  --verde:#A8E2BE;
+  --verde-escuro:#2D5948;
+  --branco:#fff;
+  --texto:#1a4a39;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*{margin:0;padding:0;box-sizing:border-box}
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--texto);
-  background-color: #E8F8EE;
-  line-height: 1.6;
-  opacity: 0;
-  animation: fadeIn 1.3s ease forwards;
+html,body{
+  height:100%;
 }
 
-/* animação de entrada */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+body{
+  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--texto);
+  background:#E8F8EE;
+  line-height:1.6;
+  opacity:0;
+  animation:fadeIn 1s ease forwards;
 }
 
-.container { width: 90%; max-width: 1100px; margin: 0 auto; }
-
-/* cabeçalho */
-header {
-  background: var(--verde);
-  box-shadow: 0 2px 6px rgba(0,0,0,.08);
-  position: sticky; top: 0; z-index: 10;
-  animation: fadeIn 1.6s ease forwards;
-}
-.nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
-.logo { font-weight: 700; font-size: 1.2rem; color: var(--verde-escuro); }
-
-.btn {
-  background: var(--verde-escuro); color: var(--branco);
-  padding: .55rem 1.2rem; border-radius: 999px; text-decoration: none;
-  font-weight: 600; margin-left: .5rem; transition: all .25s ease;
-}
-.btn:hover { background:#184634; transform: translateY(-2px); box-shadow:0 4px 10px rgba(45,89,72,.25); }
-
-/* hero (corrigido) */
-.hero {
-  /* reposiciona a arte para a direita e aumenta a área */
-  background: #CDEFD9 url('hero_02.png') 65% center / cover no-repeat;
-  text-align: center; color: var(--verde-escuro);
-  position: relative;
-  min-height: 72vh;           /* garante altura ampla */
-  padding: 120px 0 160px;     /* dá respiro inferior para não cortar nada */
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-/* cartão central */
-.overlay {
-  display: flex; justify-content: center;
-  padding: 10px 0;            /* só espaçamento externo do container */
-}
-.hero-content {
-  background: rgba(255,255,255,.78);
-  border-radius: 22px;
-  padding: 40px 26px;
-  width: min(740px, 94%);
-  box-shadow: 0 8px 20px rgba(0,0,0,.10);
-  transition: transform .25s ease;
-}
-.hero-content:hover { transform: scale(1.01); }
+/* ===== LAYOUT ===== */
+.container{width:92%;max-width:1100px;margin:0 auto}
 
-.hero-content h4 {
-  text-transform: uppercase; letter-spacing: 2px; font-size: .9rem; margin-bottom: 8px; color:#3b6f58;
-}
-.hero-content h1 {
-  font-family: "Source Serif 4", serif; font-size: 2.25rem; margin: .4rem 0 .6rem;
-}
-.sublead {
-  font-size: 1.05rem; color: #355e4a; margin: 0 auto 22px;
-  max-width: 720px;   /* limita largura para facilitar a quebra de linha */
-  line-height: 1.5;
+header{
+  position:sticky;top:0;z-index:20;
+  background:var(--verde);
+  padding:calc(8px + env(safe-area-inset-top)) 0 8px;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
 }
 
-/* botões principais */
-.buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-.btn-whatsapp, .btn-instagram {
-  display: inline-flex; align-items: center; gap: .5rem;
-  color: #fff; font-weight: 700; text-decoration: none;
-  padding: .7rem 1.6rem; border-radius: 40px; transition: all .25s ease;
+.nav{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.logo{font-weight:700;font-size:1.2rem;color:var(--verde-escuro)}
+.nav-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+
+.btn{
+  background:var(--verde-escuro);color:#fff;text-decoration:none;
+  padding:.5rem 1rem;border-radius:999px;font-weight:700;transition:.25s;
 }
-.btn-whatsapp { background: #25D366; }
-.btn-instagram { background: #E4405F; }
-.btn-whatsapp:hover { background: #1ebe5b; box-shadow: 0 0 12px rgba(37,211,102,.55); transform: scale(1.05); }
-.btn-instagram:hover { background: #d23152; box-shadow: 0 0 12px rgba(228,64,95,.55); transform: scale(1.05); }
+.btn:hover{background:#1a3e30;transform:translateY(-2px)}
 
-/* contato */
-.contato { background:#fff; padding: 56px 0; text-align:center; animation: fadeIn 1.8s ease forwards; }
-.contato h2 { font-family:"Source Serif 4",serif; margin-bottom: 16px; color: var(--verde-escuro); }
-.contato p { margin-bottom: 10px; }
-.contato a { color: var(--verde-escuro); text-decoration: none; transition: color .2s; }
-.contato a:hover { color: #184634; text-decoration: underline; }
-
-/* rodapé */
-footer {
-  background: var(--verde); color: var(--verde-escuro);
-  text-align: center; padding: 16px 0; font-size: .95rem;
-  box-shadow: 0 -2px 8px rgba(0,0,0,.08);
+/* ===== HERO ===== */
+.hero{
+  /* move levemente a arte para a direita e dá bastante área vertical */
+  background:#CDEFD9 url('hero_02.png') 62% center / cover no-repeat;
+  min-height:84vh;
+  padding:
+    calc(90px + env(safe-area-inset-top)) /* topo (considera cabeçalho e notch) */
+    0
+    260px;                                 /* base generosa para não cortar o texto */
+  display:flex;align-items:flex-start;justify-content:center;
 }
 
-/* responsivo */
-@media (max-width: 900px) {
-  .hero { background-position: 60% center; padding: 100px 0 150px; min-height: 68vh; }
-  .hero-content h1 { font-size: 1.9rem; }
+.overlay{width:100%;display:flex;justify-content:center}
+.hero-content{
+  background:rgba(255,255,255,.78);
+  border-radius:22px;
+  padding:42px 26px;
+  width:min(760px,94%);
+  box-shadow:0 8px 20px rgba(0,0,0,.10);
+  transition:transform .25s ease;
 }
-@media (max-width: 600px) {
-  .hero { background-position: center; padding: 90px 0 140px; }
-  .sublead { padding: 0 6px; }
+.hero-content:hover{transform:scale(1.01)}
+
+.hero-content h4{
+  text-transform:uppercase;letter-spacing:2px;font-size:.9rem;margin-bottom:8px;color:#3b6f58
+}
+.hero-content h1{
+  font-family:"Source Serif 4",serif;
+  font-size:clamp(1.6rem,4.8vw,2.35rem);
+  line-height:1.25;
+  margin:.4rem 0 .6rem
+}
+.sublead{
+  font-size:clamp(.98rem,3.6vw,1.06rem);
+  color:#355e4a;margin:0 auto 22px;max-width:720px;line-height:1.55
+}
+
+/* Botões principais */
+.buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-whatsapp,.btn-instagram{
+  display:inline-flex;align-items:center;gap:.5rem;
+  color:#fff;text-decoration:none;font-weight:700;border-radius:40px;
+  padding:.7rem 1.6rem;transition:.25s
+}
+.btn-whatsapp{background:#25D366}
+.btn-instagram{background:#E4405F}
+.btn-whatsapp:hover{background:#1ebe5b;box-shadow:0 0 12px rgba(37,211,102,.55);transform:scale(1.05)}
+.btn-instagram:hover{background:#d23152;box-shadow:0 0 12px rgba(228,64,95,.55);transform:scale(1.05)}
+
+/* ===== CONTATO ===== */
+.contato{background:#fff;padding:56px 0;text-align:center}
+.contato h2{font-family:"Source Serif 4",serif;margin-bottom:16px;color:var(--verde-escuro)}
+.contato p{margin-bottom:10px}
+.contato a{color:var(--verde-escuro);text-decoration:none}
+.contato a:hover{text-decoration:underline}
+
+/* ===== RODAPÉ ===== */
+footer{
+  background:var(--verde);color:var(--verde-escuro);
+  text-align:center;padding:16px 0;font-size:.95rem;
+  box-shadow:0 -2px 8px rgba(0,0,0,.08)
+}
+
+/* ===== CORREÇÃO DA PÁG. REFLEXÕES ===== */
+/* Se existir uma frase introdutória, esconda. */
+.reflexoes .hero p,
+.reflexoes .intro,
+#reflexoes-intro{display:none !important}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width:880px){
+  .hero{background-position:58% center;min-height:78vh;padding-bottom:220px}
+  .hero-content{width:min(680px,95%)}
+}
+
+@media (max-width:600px){
+  .nav-actions .btn{padding:.45rem .9rem}
+  .hero{background-position:center;min-height:74vh;padding-top:calc(96px + env(safe-area-inset-top));padding-bottom:200px}
+  .hero-content{padding:30px 18px;border-radius:18px}
+  .buttons{flex-direction:column;gap:.7rem}
 }
