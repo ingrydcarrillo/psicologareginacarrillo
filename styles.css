@@ -35,7 +35,7 @@ header{
 }
 .btn:hover{background:#1a3e30;transform:translateY(-2px)}
 
-/* HERO — desktop padrão */
+/* HERO — desktop */
 .hero{
   background:#CDEFD9 url('hero_02.png') 62% center / cover no-repeat;
   min-height:84vh;
@@ -91,40 +91,43 @@ footer{
   box-shadow:0 -2px 8px rgba(0,0,0,.08)
 }
 
-/* ——— Correções MOBILE (iPhone/Android) ——— */
-@media (max-width:920px){
-  /* mostra a arte inteira, sem cortes */
+/* ——— MOBILE FIX (iPhone/Android) ——— */
+/* Força a arte inteira a aparecer e corrige a altura com a barra dinâmica do Safari */
+@media (max-width:930px){
   .hero{
-    background-position: right top;
-    background-size: contain;        /* <- chave para não cortar */
-    background-repeat: no-repeat;
-    min-height:auto;
-    padding-top:calc(120px + env(safe-area-inset-top));
-    padding-bottom:28px;             /* respiro sem exagero */
+    background-color:#CDEFD9;
+    background-image:url('hero_02.png');
+    background-repeat:no-repeat !important;
+    background-position:right top !important;
+    background-size:contain !important;        /* chave: sem cortes */
+    min-height:calc(100svh - 120px) !important; /* usa svh: viewport real no iOS */
+    padding-top:calc(120px + env(safe-area-inset-top)) !important;
+    padding-bottom:18px !important;
   }
   .overlay{align-items:flex-start}
   .hero-content{
-    width:min(680px,94%);
-    margin:8vw auto 4vw;
-    padding:28px 18px;
-    border-radius:18px;
+    width:94% !important;
+    max-width:680px;
+    margin:4vw auto 2vw;
+    padding:24px 18px !important;
+    border-radius:18px !important;
   }
   .buttons{flex-direction:column;gap:.8rem}
 }
 
-/* Botão flutuante de WhatsApp (refinado) */
+/* Botão flutuante do WhatsApp — menor e mais alto */
 .wa-float{
   position:fixed;
   right:16px;
-  bottom:calc(96px + env(safe-area-inset-bottom)); /* sobe acima da barra do Safari */
-  width:56px;height:56px;border-radius:50%;
+  bottom:calc(104px + env(safe-area-inset-bottom)); /* sobe acima da barra */
+  width:54px;height:54px;border-radius:50%;
   background:#25D366;color:#fff;
   display:none;align-items:center;justify-content:center;
   box-shadow:0 8px 20px rgba(0,0,0,.22);
-  border:3px solid #fff;               /* borda branca pra não “grudar” no fundo */
+  border:3px solid #fff;
   z-index:50;text-decoration:none;
   transition:transform .2s ease, box-shadow .2s ease;
 }
-.wa-float i{font-size:26px;line-height:1}
+.wa-float i{font-size:25px;line-height:1}
 .wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,211,102,.45)}
-@media (max-width:920px){ .wa-float{display:flex} }
+@media (max-width:930px){ .wa-float{display:flex} }
