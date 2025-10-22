@@ -20,11 +20,11 @@ body{
 
 .container{width:92%;max-width:1100px;margin:0 auto}
 
-/* Header */
+/* Header fixo */
 header{
   position:sticky;top:0;z-index:20;
   background:var(--verde);
-  padding:calc(8px + env(safe-area-inset-top)) 0 8px;
+  padding:calc(10px + env(safe-area-inset-top)) 0 10px;
   box-shadow:0 2px 6px rgba(0,0,0,.08);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
@@ -32,20 +32,21 @@ header{
 .nav-actions{display:flex;gap:.5rem;flex-wrap:wrap}
 .btn{
   background:var(--verde-escuro);color:#fff;text-decoration:none;
-  padding:.5rem 1rem;border-radius:999px;font-weight:700;transition:.25s
+  padding:.55rem 1rem;border-radius:999px;font-weight:700;transition:.25s
 }
 .btn:hover{background:#1a3e30;transform:translateY(-2px)}
 
-/* HERO – fundo restaurado com girassóis */
+/* HERO – fundo com girassóis */
 .hero{
-  background:#CDEFD9 url('hero_02.png') 62% center / cover no-repeat; /* <- FUNDO */
-  min-height:84vh;
-  padding:calc(90px + env(safe-area-inset-top)) 0 240px;
+  background:#CDEFD9 url('hero_02.png') 62% center / cover no-repeat;
+  min-height:86vh;                            /* mais alto */
+  padding:calc(100px + env(safe-area-inset-top)) 0 260px; /* respiro grande embaixo */
   display:flex;align-items:flex-start;justify-content:center;
 }
 .overlay{width:100%;display:flex;justify-content:center}
 .hero-content{
-  background:rgba(255,255,255,.78);
+  background:rgba(255,255,255,.80);
+  backdrop-filter:saturate(130%) blur(0px);
   border-radius:22px;
   padding:42px 26px;
   width:min(760px,94%);
@@ -62,16 +63,16 @@ header{
   line-height:1.25;margin:.4rem 0 .6rem
 }
 .sublead{
-  font-size:clamp(.98rem,3.6vw,1.06rem);
-  color:#355e4a;margin:0 auto 22px;max-width:720px;line-height:1.55
+  font-size:clamp(1rem,3.6vw,1.06rem);
+  color:#355e4a;margin:0 auto 24px;max-width:720px;line-height:1.55
 }
 
-/* Botões principais (com ícones) */
+/* Botões principais */
 .buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
 .btn-whatsapp,.btn-instagram{
-  display:inline-flex;align-items:center;gap:.5rem;
+  display:inline-flex;align-items:center;gap:.55rem;
   color:#fff;text-decoration:none;font-weight:700;border-radius:40px;
-  padding:.7rem 1.6rem;transition:.25s
+  padding:.8rem 1.6rem;transition:.25s
 }
 .btn-whatsapp{background:#25D366}
 .btn-instagram{background:#E4405F}
@@ -85,26 +86,49 @@ header{
 .contato a{color:var(--verde-escuro);text-decoration:none}
 .contato a:hover{text-decoration:underline}
 
-/* Footer */
+/* Rodapé */
 footer{
   background:var(--verde);color:var(--verde-escuro);
   text-align:center;padding:16px 0;font-size:.95rem;
   box-shadow:0 -2px 8px rgba(0,0,0,.08)
 }
 
-/* ——— Página de Reflexões: garantir que qualquer intro seja escondida ——— */
+/* ——— Página de Reflexões: se existir intro, esconda ——— */
 .reflexoes .hero .hero-content,
 .reflexoes .hero .intro,
 #reflexoes-intro{display:none !important}
 
-/* Responsivo */
+/* Botão flutuante do WhatsApp (mobile) */
+.wa-float{
+  position:fixed;
+  right:18px;
+  bottom:calc(18px + env(safe-area-inset-bottom));
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 10px 22px rgba(0,0,0,.18);
+  z-index:40;text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.wa-float i{font-size:28px;line-height:1}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,211,102,.5)}
+@media (max-width:900px){ .wa-float{display:flex} }
+
+/* Responsivo (mobile refinado) */
 @media (max-width:880px){
-  .hero{background-position:58% center;min-height:78vh;padding-bottom:210px}
+  .hero{background-position:60% top;min-height:90vh;padding-bottom:280px}
   .hero-content{width:min(680px,95%)}
 }
 @media (max-width:600px){
-  .nav-actions .btn{padding:.45rem .9rem}
-  .hero{background-position:center;min-height:74vh;padding-top:calc(96px + env(safe-area-inset-top));padding-bottom:190px}
-  .hero-content{padding:30px 18px;border-radius:18px}
-  .buttons{flex-direction:column;gap:.7rem}
+  .nav-actions .btn{padding:.5rem .95rem}
+  .hero{
+    background-position:58% top;      /* mostra melhor o girassol no iPhone */
+    min-height:94vh;                   /* mais alto no celular */
+    padding-top:calc(118px + env(safe-area-inset-top));
+    padding-bottom:300px;              /* respiro extra para não cortar nada */
+  }
+  .hero-content{
+    padding:26px 18px;border-radius:18px;margin:0 auto;
+  }
+  .buttons{flex-direction:column;gap:.8rem}
 }
