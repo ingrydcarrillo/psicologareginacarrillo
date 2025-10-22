@@ -1,4 +1,10 @@
-/* ===== RESET BÁSICO ===== */
+:root {
+  --verde: #A8E2BE;
+  --verde-escuro: #2D5948;
+  --branco: #ffffff;
+  --texto: #1a4a39;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +13,9 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  color: var(--texto);
   background-color: #E8F8EE;
-  color: #333;
   line-height: 1.6;
-}
-
-/* ===== CABEÇALHO ===== */
-header {
-  background: #A8E2BE;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container {
@@ -25,134 +24,146 @@ header {
   margin: 0 auto;
 }
 
+header {
+  background: var(--verde);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
 }
 
 .logo {
   font-weight: 700;
-  font-size: 1.3rem;
-  color: #2D5948;
+  font-size: 1.2rem;
+  color: var(--verde-escuro);
 }
 
-/* ===== HERO ===== */
-.hero {
-  background: #CDEFD9 url('hero_02.png') center/cover no-repeat;
-  color: #0a3829;
-  text-align: center;
-  padding: 6rem 1rem;
-}
-
-.hero .card {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 1.5rem;
-  display: inline-block;
-  padding: 2rem 3rem;
-  max-width: 700px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.hero h1 {
-  font-family: 'Source Serif 4', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #1a4a39;
-}
-
-.hero .kicker {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: #3b6f58;
-  letter-spacing: 1px;
-}
-
-.hero .lead {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: #355e4a;
-}
-
-/* ===== BOTÕES ===== */
 .btn {
-  background: #2D5948;
-  color: white;
-  padding: 0.75rem 1.5rem;
+  background: var(--verde-escuro);
+  color: var(--branco);
+  padding: 0.5rem 1.2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  transition: background 0.3s ease;
-  margin: 0.3rem;
-  display: inline-block;
+  margin-left: 0.5rem;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #1a3e30;
+  background: #184634;
 }
 
-/* Botão WhatsApp */
-.btn.whatsapp {
+/* Hero */
+.hero {
+  background: #CDEFD9 url('hero_02.png') center right / cover no-repeat;
+  color: var(--verde-escuro);
+  text-align: center;
+  position: relative;
+  padding: 120px 0;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  padding: 40px 20px;
+  display: inline-block;
+}
+
+.hero-content h4 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-family: "Source Serif 4", serif;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-whatsapp,
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 40px;
+  transition: 0.3s;
+}
+
+.btn-whatsapp {
   background: #25D366;
 }
 
-.btn.whatsapp:hover {
-  background: #1ebe5d;
+.btn-whatsapp:hover {
+  background: #1ebe5b;
 }
 
-/* Botão Instagram */
-.btn.instagram {
+.btn-instagram {
   background: #E4405F;
 }
 
-.btn.instagram:hover {
-  background: #c62b4c;
+.btn-instagram:hover {
+  background: #d23152;
 }
 
-/* ===== SEÇÃO CONTATO ===== */
-.section {
-  padding: 4rem 1rem;
+/* Contato */
+.contato {
+  background: #fff;
+  padding: 50px 0;
   text-align: center;
 }
 
-.section h2 {
-  font-family: 'Source Serif 4', serif;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #1a4a39;
+.contato h2 {
+  font-family: "Source Serif 4", serif;
+  margin-bottom: 20px;
+  color: var(--verde-escuro);
 }
 
-.section a {
-  color: #2D5948;
-  font-weight: 600;
+.contato p {
+  margin-bottom: 10px;
+}
+
+.contato a {
+  color: var(--verde-escuro);
   text-decoration: none;
 }
 
-.section a:hover {
+.contato a:hover {
   text-decoration: underline;
 }
 
-/* ===== RODAPÉ ===== */
+/* Rodapé */
 footer {
-  background: #A8E2BE;
-  color: #2D5948;
+  background: var(--verde);
+  color: var(--verde-escuro);
   text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  font-size: 0.95rem;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
-  .hero {
-    padding: 4rem 1rem;
-  }
-
-  .hero .card {
-    padding: 1.5rem;
-  }
-
-  .hero h1 {
-    font-size: 1.5rem;
-  }
+.small {
+  font-size: 0.9rem;
 }
