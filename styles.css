@@ -15,12 +15,11 @@ body{
   line-height:1.6;
   opacity:0; animation:fadeIn 1s ease forwards;
 }
-
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
 .container{width:92%;max-width:1100px;margin:0 auto}
 
-/* Header fixo */
+/* Header */
 header{
   position:sticky;top:0;z-index:20;
   background:var(--verde);
@@ -36,17 +35,16 @@ header{
 }
 .btn:hover{background:#1a3e30;transform:translateY(-2px)}
 
-/* HERO – fundo com girassóis */
+/* HERO — desktop padrão */
 .hero{
   background:#CDEFD9 url('hero_02.png') 62% center / cover no-repeat;
-  min-height:86vh;                            /* mais alto */
-  padding:calc(100px + env(safe-area-inset-top)) 0 260px; /* respiro grande embaixo */
+  min-height:84vh;
+  padding:calc(100px + env(safe-area-inset-top)) 0 240px;
   display:flex;align-items:flex-start;justify-content:center;
 }
 .overlay{width:100%;display:flex;justify-content:center}
 .hero-content{
   background:rgba(255,255,255,.80);
-  backdrop-filter:saturate(130%) blur(0px);
   border-radius:22px;
   padding:42px 26px;
   width:min(760px,94%);
@@ -86,49 +84,47 @@ header{
 .contato a{color:var(--verde-escuro);text-decoration:none}
 .contato a:hover{text-decoration:underline}
 
-/* Rodapé */
+/* Footer */
 footer{
   background:var(--verde);color:var(--verde-escuro);
   text-align:center;padding:16px 0;font-size:.95rem;
   box-shadow:0 -2px 8px rgba(0,0,0,.08)
 }
 
-/* ——— Página de Reflexões: se existir intro, esconda ——— */
-.reflexoes .hero .hero-content,
-.reflexoes .hero .intro,
-#reflexoes-intro{display:none !important}
-
-/* Botão flutuante do WhatsApp (mobile) */
-.wa-float{
-  position:fixed;
-  right:18px;
-  bottom:calc(18px + env(safe-area-inset-bottom));
-  width:58px;height:58px;border-radius:50%;
-  background:#25D366;color:#fff;
-  display:none;align-items:center;justify-content:center;
-  box-shadow:0 10px 22px rgba(0,0,0,.18);
-  z-index:40;text-decoration:none;
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.wa-float i{font-size:28px;line-height:1}
-.wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,211,102,.5)}
-@media (max-width:900px){ .wa-float{display:flex} }
-
-/* Responsivo (mobile refinado) */
-@media (max-width:880px){
-  .hero{background-position:60% top;min-height:90vh;padding-bottom:280px}
-  .hero-content{width:min(680px,95%)}
-}
-@media (max-width:600px){
-  .nav-actions .btn{padding:.5rem .95rem}
+/* ——— Correções MOBILE (iPhone/Android) ——— */
+@media (max-width:920px){
+  /* mostra a arte inteira, sem cortes */
   .hero{
-    background-position:58% top;      /* mostra melhor o girassol no iPhone */
-    min-height:94vh;                   /* mais alto no celular */
-    padding-top:calc(118px + env(safe-area-inset-top));
-    padding-bottom:300px;              /* respiro extra para não cortar nada */
+    background-position: right top;
+    background-size: contain;        /* <- chave para não cortar */
+    background-repeat: no-repeat;
+    min-height:auto;
+    padding-top:calc(120px + env(safe-area-inset-top));
+    padding-bottom:28px;             /* respiro sem exagero */
   }
+  .overlay{align-items:flex-start}
   .hero-content{
-    padding:26px 18px;border-radius:18px;margin:0 auto;
+    width:min(680px,94%);
+    margin:8vw auto 4vw;
+    padding:28px 18px;
+    border-radius:18px;
   }
   .buttons{flex-direction:column;gap:.8rem}
 }
+
+/* Botão flutuante de WhatsApp (refinado) */
+.wa-float{
+  position:fixed;
+  right:16px;
+  bottom:calc(96px + env(safe-area-inset-bottom)); /* sobe acima da barra do Safari */
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.22);
+  border:3px solid #fff;               /* borda branca pra não “grudar” no fundo */
+  z-index:50;text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.wa-float i{font-size:26px;line-height:1}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(37,211,102,.45)}
+@media (max-width:920px){ .wa-float{display:flex} }
