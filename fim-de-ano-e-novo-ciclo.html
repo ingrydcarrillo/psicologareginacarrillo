@@ -3,46 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Fim de ano e novo ciclo | Reflexões — Regina Carrillo</title>
-  <meta name="description" content="Reflexão sobre fim de ano, início de um novo ciclo e mudanças de atitudes com gentileza e consciência." />
+  <title>O fim de um ano e o início de outro | Reflexões</title>
+  <meta name="description" content="Reflexão sobre fim de ano, início de um novo ciclo e mudanças de atitudes com responsabilidade e afeto." />
   <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3b3b8b1c3f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="stylesheet" href="styles.css?v=7" />
 
   <style>
-    body.reflexao{ background:#E8F8EE; }
-    .article-wrap{ padding:36px 0 70px; }
-    .article{
-      background:#fff; border-radius:18px; padding:26px 22px;
+    .post-wrap{ background:#E8F8EE; padding:42px 0 70px; }
+    .post-article{
+      background:#fff;
+      border-radius:18px;
+      padding:26px 22px;
       border:1px solid rgba(45,89,72,.12);
-      box-shadow:0 10px 22px rgba(0,0,0,.06);
-      max-width:920px; margin:0 auto;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      max-width:920px;
+      margin:0 auto;
     }
-    .article h1{
+    .post-article h1{
       font-family:"Source Serif 4",serif;
-      color:#2D5948; margin:4px 0 8px; font-size:2rem; line-height:1.15;
+      color:#2D5948;
+      line-height:1.2;
+      margin-bottom:10px;
+      font-size:clamp(1.6rem,4vw,2.2rem);
     }
-    .article .meta{ color:#6b7f78; font-size:.95rem; margin-bottom:16px; }
-    .article figure{ margin:0 0 16px; }
-    .article img{
-      width:100%; height:auto; border-radius:14px;
-      border:1px solid rgba(45,89,72,.12);
+    .post-meta{ color:#6b7f78; font-size:.95rem; margin-bottom:18px; }
+    .post-hero{
+      width:100%;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(45,89,72,.10);
+      margin:10px 0 18px;
+      background:#f6fbf8;
+    }
+    .post-hero img{
+      width:100%;
+      height:auto;
       display:block;
     }
-    .article p{
-      color:#1b2b25;
-      font-size:1.06rem;
-      line-height:1.75;
-      margin:0 0 14px;
+    .post-article p{ margin:0 0 14px; }
+    .back-row{ margin-top:18px; display:flex; gap:10px; flex-wrap:wrap; }
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      text-decoration:none;
+      font-weight:700;
+      background:#2D5948;
+      color:#fff;
+      padding:.55rem 1rem;
+      border-radius:999px;
+      transition:.2s;
     }
-    .backlink{ display:inline-block; margin-top:10px; }
+    .back-link:hover{ background:#1a3e30; transform:translateY(-1px); }
   </style>
 </head>
 
-<body class="reflexao">
+<body>
   <header>
     <div class="container nav">
       <div class="logo">🌻 Psicóloga • TCC</div>
@@ -54,15 +75,15 @@
     </div>
   </header>
 
-  <main class="article-wrap">
+  <main class="post-wrap">
     <div class="container">
-      <article class="article">
-        <h1>Fim de ano e início de um novo ciclo</h1>
-        <div class="meta">26/12/2025 • 4 min</div>
+      <article class="post-article">
+        <h1>O fim de um ano e o início de outro</h1>
+        <div class="post-meta">26/12/2025 • 3–4 min</div>
 
-        <figure>
-          <img src="reflexao-fim-de-ano.png" alt="Ilustração sobre fim de ano e novo começo, com reflexão e mudanças de atitude." />
-        </figure>
+        <div class="post-hero">
+          <img src="reflexao-fim-de-ano.png" alt="Imagem reflexiva sobre fim de ano e início de um novo ciclo" />
+        </div>
 
         <p>O fim de um ano costuma chegar como uma pausa simbólica. Não porque o tempo realmente pare, ele segue, mas porque nós, humanos, precisamos de marcos para olhar para trás e reorganizar o que vai por dentro. Entre lembranças, conquistas e frustrações, esse período convida a uma pergunta silenciosa e profunda: como eu tenho vivido? Nem sempre a resposta vem clara, e tudo bem. A reflexão não exige conclusões imediatas, apenas disponibilidade para escutar a própria experiência com honestidade e gentileza.</p>
 
@@ -70,7 +91,9 @@
 
         <p>Que o novo ano seja menos sobre se cobrar e mais sobre se responsabilizar com afeto. Responsabilizar-se por aquilo que é possível mudar, aceitar o que não é, e buscar ajuda quando o caminho parecer confuso demais para ser trilhado sozinho. Afinal, crescer emocionalmente não é eliminar dificuldades, mas desenvolver recursos internos para lidar com elas. Que este novo ciclo seja um convite à consciência, à flexibilidade e ao cuidado consigo e com os outros.</p>
 
-        <a class="backlink btn" href="reflexoes.html#posts">← Voltar para Reflexões</a>
+        <div class="back-row">
+          <a class="back-link" href="reflexoes.html#posts">← Voltar para Reflexões</a>
+        </div>
       </article>
     </div>
   </main>
