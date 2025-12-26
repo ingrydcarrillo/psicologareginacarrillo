@@ -11,11 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3b3b8b1c3f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css" />
+
   <style>
-    /* Hero limpo, mesmo comportamento do mobile da home */
+    /* Hero limpo */
     body.reflexoes .hero{
       background:#CDEFD9 url('hero_01.png') right top / cover no-repeat;
-      min-height:70vh; padding-top:calc(100px + env(safe-area-inset-top)); padding-bottom:160px;
+      min-height:70vh;
+      padding-top:calc(100px + env(safe-area-inset-top));
+      padding-bottom:160px;
       display:flex; align-items:flex-start; justify-content:center;
     }
     body.reflexoes .hero .hero-content{ display:none !important; }
@@ -23,31 +26,61 @@
     @media (max-width:920px){
       body.reflexoes .hero{
         background-position:right top;
-        background-size:contain;      /* sem cortes */
+        background-size:contain;
         background-repeat:no-repeat;
-        min-height:auto; padding-bottom:28px;
+        min-height:auto;
+        padding-bottom:28px;
       }
     }
 
     .blog{ background:#E8F8EE; padding:48px 0 64px; }
-    .blog h2{ text-align:center; color:#1a4a39; font-family:"Source Serif 4",serif; margin-bottom:18px; }
+    .blog h2{
+      text-align:center; color:#1a4a39;
+      font-family:"Source Serif 4",serif; margin-bottom:18px;
+    }
+
     .grid{ display:grid; gap:18px; margin-top:12px; }
     @media(min-width:840px){ .grid{ grid-template-columns:1fr 1fr } }
-    article.post{
-      background:#fff; border-radius:16px; padding:22px 22px;
+
+    /* Card clicável (link com cara de card) */
+    a.post{
+      display:block;
+      background:#fff;
+      border-radius:16px;
+      padding:22px;
       border:1px solid rgba(45,89,72,.12);
       box-shadow:0 6px 16px rgba(0,0,0,.06);
       transition:transform .2s ease, box-shadow .2s ease;
+      text-decoration:none;
+      color:inherit;
+      outline:none;
     }
-    article.post:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,.08); }
-    article.post h3{ font-family:"Source Serif 4",serif; color:#2D5948; margin-bottom:6px; font-size:1.35rem; }
+    a.post:hover{ transform:translateY(-2px); box-shadow:0 10px 20px rgba(0,0,0,.08); }
+    a.post:focus-visible{
+      box-shadow:0 0 0 4px rgba(45,89,72,.18), 0 10px 20px rgba(0,0,0,.08);
+    }
+
+    a.post h3{
+      font-family:"Source Serif 4",serif;
+      color:#2D5948;
+      margin-bottom:6px;
+      font-size:1.35rem;
+    }
     .meta{ font-size:.9rem; color:#6b7f78; margin-bottom:10px; }
     .tags{ margin-top:10px; }
-    .tag{ display:inline-block; background:#d9f3e6; color:#0f3f31; padding:.22rem .6rem; border-radius:999px; margin-right:.35rem; font-size:.85rem; }
+    .tag{
+      display:inline-block;
+      background:#d9f3e6;
+      color:#0f3f31;
+      padding:.22rem .6rem;
+      border-radius:999px;
+      margin-right:.35rem;
+      font-size:.85rem;
+    }
   </style>
 </head>
-<body class="reflexoes">
 
+<body class="reflexoes">
   <header>
     <div class="container nav">
       <div class="logo">🌻 Psicóloga • TCC</div>
@@ -66,33 +99,41 @@
       <h2>Textos recentes</h2>
 
       <div class="grid">
-        <article class="post">
+        <!-- NOVO POST (fim/início de ano) -->
+        <a class="post" href="reflexao-fim-de-ano.html" aria-label="Abrir: Fim de ano e início de outro: mudanças de atitudes">
+          <h3>Fim de ano e início de outro: mudanças de atitudes</h3>
+          <div class="meta">26/12/2025 • 3–4 min</div>
+          <p>O fim do ano pode ser um marco simbólico para reorganizar o que vai por dentro. O novo ciclo convida a ajustes possíveis, pequenos e sustentáveis — com responsabilidade e afeto.</p>
+          <div class="tags"><span class="tag">Autocuidado</span><span class="tag">Consciência</span><span class="tag">Mudança</span></div>
+        </a>
+
+        <a class="post" href="o-poder-do-autoconhecimento.html" aria-label="Abrir: O poder do autoconhecimento">
           <h3>O poder do autoconhecimento</h3>
           <div class="meta">22/10/2025 • 3 min</div>
           <p>Reconhecer pensamentos e emoções é o primeiro passo para transformá-los. Na TCC, observamos crenças, testamos hipóteses e construímos caminhos práticos, com gentileza e método.</p>
           <div class="tags"><span class="tag">TCC</span><span class="tag">Autoconhecimento</span></div>
-        </article>
+        </a>
 
-        <article class="post">
+        <a class="post" href="ansiedade-e-o-tempo-presente.html" aria-label="Abrir: Ansiedade e o tempo presente">
           <h3>Ansiedade e o tempo presente</h3>
           <div class="meta">22/10/2025 • 2 min</div>
           <p>A ansiedade costuma nascer do excesso de futuro. Técnicas de ancoragem no presente, respiração e reestruturação cognitiva ajudam a reduzir a ruminação e ampliar escolhas.</p>
           <div class="tags"><span class="tag">Ansiedade</span><span class="tag">Mindfulness</span></div>
-        </article>
+        </a>
 
-        <article class="post">
+        <a class="post" href="microvitorias-e-motivacao.html" aria-label="Abrir: Microvitórias e motivação">
           <h3>Microvitórias e motivação</h3>
           <div class="meta">22/10/2025 • 2 min</div>
           <p>Progresso consistente vem de passos pequenos e frequentes. Tarefas claras e possíveis aumentam o senso de autoeficácia.</p>
           <div class="tags"><span class="tag">Hábitos</span><span class="tag">Motivação</span></div>
-        </article>
+        </a>
 
-        <article class="post">
+        <a class="post" href="autocompaixao-nao-e-acomodacao.html" aria-label="Abrir: Autocompaixão não é acomodação">
           <h3>Autocompaixão não é acomodação</h3>
           <div class="meta">22/10/2025 • 3 min</div>
           <p>Ser gentil consigo não significa deixar de agir. Ao contrário: reduz a autocrítica paralisante e abre espaço para escolhas sustentáveis.</p>
           <div class="tags"><span class="tag">Autocuidado</span><span class="tag">Emoções</span></div>
-        </article>
+        </a>
       </div>
     </div>
   </main>
